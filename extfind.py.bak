@@ -1,0 +1,47 @@
+import os
+
+directory = os.getcwd()
+print(directory)
+
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
+print(dir_path)
+
+for file in os.listdir("./"):
+    if file.endswith(".xls"):
+        print(os.path.join("./", file))
+
+path = os.getcwd()
+text_files = [f for f in os.listdir(path) if f.endswith('.xls')]
+print(text_files)
+
+path = os.getcwd()
+files = os.listdir(path)
+files_txt = [i for i in files if i.endswith('.xls')]
+print(files_txt)
+
+
+
+
+the_dir = os.getcwd()
+all_txt_files = list(filter(lambda x: x.endswith('.xls'), os.listdir(the_dir)))
+fn =   (", ".join(all_txt_files))
+fname = os.path.abspath(fn)
+
+print (fname) 
+
+
+
+
+# File path example.
+path=fname 
+ 
+# Get the filename only from the initial file path.
+filename = os.path.basename(path)
+ 
+# Use splitext() to get filename and extension separately.
+(file, ext) = os.path.splitext(filename)
+ 
+# Print outcome.
+print("Filename without extension =", file)
+print("Extension =", ext)
